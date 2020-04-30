@@ -1,0 +1,38 @@
+.header {
+    height: 95vh;
+    background-image: url(../img/front.jpg);
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    position: relative;
+    @include respond(phone){
+        background-position: -25% top;
+    }
+    &__logos-box {
+        margin-top: 3rem;
+        @include respond(phone){
+            margin-top: 2rem;
+        }
+    }
+    &__logo-box {
+        display: inline-block;
+    }
+    &__logo-html {
+        height: 10vw;
+    }
+    &__text-box {
+        position: absolute;
+        top: 45%;
+        left: 55%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        @include respond(phone){
+            top: 70%;
+            padding:0 1rem;
+            border-radius: 3rem;
+            background-color: rgba($color-grey-light-1, .7);
+        }
+
+    }
+    
+}

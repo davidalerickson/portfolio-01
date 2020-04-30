@@ -1,0 +1,165 @@
+.navigation {
+    &__checkbox {
+        display: none;
+    }
+    &__button {
+        height: 7rem;
+        width: 7rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 6rem;
+        right: 6rem;
+        text-align: center; //to center the nav icon span element
+        background-color: $color-white;
+        box-shadow: 0 1rem 3rem rgba($color-white, .4);
+        cursor: pointer;
+        z-index: 2000;
+        @include respond(phone){
+            top: 3rem;
+            right: 3rem;
+        }
+    }
+    &__background {
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%;
+        background-image: radial-gradient(rgba($color-grey-dark, .95), rgba($color-grey-dark, .95));
+        position: fixed;
+        top: 6.5rem;
+        right: 6.5rem;
+        z-index: 1000;
+        transition: transform .5s;
+
+        @include respond(phone){
+            top: 3.5rem;
+            right: 3.5rem;
+        }
+
+    }
+    &__nav {
+        height: 100vh;
+        width: 0;
+        top: 0;
+        left: 0;
+        position: fixed;
+        z-index: 1500;
+        opacity: 0;
+        transition: all .8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+    }
+    &__list {
+        position: absolute;
+        width: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        list-style: none;
+        text-align: center;
+    }
+    &__item {
+        margin: 2rem;
+    }
+    &__link {
+        span{
+            margin-right: 1.5rem;
+            display: inline-block;
+        }
+        &:link,
+        &:visited {
+            display: inline-block;
+            font-size: 3rem;
+            font-weight: 300;
+            color: $color-white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            text-transform: uppercase;
+    
+            background-image: linear-gradient(120deg,
+                transparent 0%,
+                transparent 50%,
+                $color-white 50%,
+                $color-white 100%
+                );
+            background-size: 220%;
+            transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1);
+
+        }
+ 
+        //background-size: 50%;
+        &:hover,
+        &:active {
+            background-position: 100%;//shift the gradient back to bring white background to left.
+            color: $color-primary;
+            transform: translateX(1rem);
+        }
+
+    }
+//FUNCTIONALITY
+
+    &__checkbox:checked ~ &__background {
+        //scale background on check
+        transform: scale(80);
+    }
+
+    &__checkbox:checked ~ &__nav {
+        //scale background
+        width: 100%;
+        opacity: 1;
+    }
+
+//ICON
+
+&__icon {
+    position: relative;
+    margin-top: 3.5rem;
+    &,
+    &::before,
+    &::after {
+        width: 3rem;
+        height: 2px;
+        background-color: $color-grey-dark-3;
+        display: inline-block;
+    }
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        transition: all .3s;
+    }
+
+    &::before {
+        top: -.8rem;
+    }
+    &::after {
+        top: .8rem;
+    }
+
+}
+
+&__button:hover  &__icon:before {
+    top: -1rem;
+}
+
+&__button:hover &__icon::after {
+    top: 1rem;
+}
+
+//Change Icon from hamburger to X when checked
+
+&__checkbox:checked + &__button &__icon {
+    background-color: transparent; //hide center bar of button when checked
+}
+
+&__checkbox:checked + &__button &__icon::before {
+    transform: rotate(135deg);
+    top: 0;
+
+}
+
+&__checkbox:checked + &__button &__icon:after {
+    transform: rotate(-135deg);
+    top: 0;
+}
+
+}
