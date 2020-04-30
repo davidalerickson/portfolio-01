@@ -10,8 +10,9 @@
         top: 6rem;
         right: 6rem;
         text-align: center; //to center the nav icon span element
-        background-color: $color-white;
-        box-shadow: 0 1rem 3rem rgba($color-white, .4);
+        // background-color: $color-white;
+        background-color: #FF9376;
+        box-shadow: 0 0rem 3rem rgba(#FFFA17, 1);
         cursor: pointer;
         z-index: 2000;
         @include respond(phone){
@@ -23,12 +24,13 @@
         height: 6rem;
         width: 6rem;
         border-radius: 50%;
-        background-image: radial-gradient(rgba($color-grey-dark, .95), rgba($color-grey-dark, .95));
+        // background-image: radial-gradient(rgba($color-grey-dark, .95), rgba($color-grey-dark, .95));
+        background-image: radial-gradient(rgba(#FF9376, .95), rgba(#FFFA17, .95));
         position: fixed;
         top: 6.5rem;
         right: 6.5rem;
         z-index: 1000;
-        transition: transform .5s;
+        transition: transform 1s;
 
         @include respond(phone){
             top: 3.5rem;
@@ -85,7 +87,6 @@
 
         }
  
-        //background-size: 50%;
         &:hover,
         &:active {
             background-position: 100%;//shift the gradient back to bring white background to left.
@@ -99,6 +100,7 @@
     &__checkbox:checked ~ &__background {
         //scale background on check
         transform: scale(80);
+        @include fireBoxShadow;
     }
 
     &__checkbox:checked ~ &__nav {

@@ -158,8 +158,9 @@ body {
   background-image: url(../img/Front.jpg);
   background-size: cover;
   background-position: top;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-  position: relative; }
+  box-shadow: 0 2rem 4rem black; }
   @media (max-width: 37.5em) {
     .header {
       background-position: -25% top; } }
@@ -196,8 +197,8 @@ body {
   top: 6rem;
   right: 6rem;
   text-align: center;
-  background-color: #fff;
-  box-shadow: 0 1rem 3rem rgba(255, 255, 255, 0.4);
+  background-color: #FF9376;
+  box-shadow: 0 0rem 3rem #fffa17;
   cursor: pointer;
   z-index: 2000; }
   @media (max-width: 37.5em) {
@@ -209,12 +210,12 @@ body {
   height: 6rem;
   width: 6rem;
   border-radius: 50%;
-  background-image: radial-gradient(rgba(119, 119, 119, 0.95), rgba(119, 119, 119, 0.95));
+  background-image: radial-gradient(rgba(255, 147, 118, 0.95), rgba(255, 250, 23, 0.95));
   position: fixed;
   top: 6.5rem;
   right: 6.5rem;
   z-index: 1000;
-  transition: transform .5s; }
+  transition: transform 1s; }
   @media (max-width: 37.5em) {
     .navigation__background {
       top: 3.5rem;
@@ -264,7 +265,8 @@ body {
   transform: translateX(1rem); }
 
 .navigation__checkbox:checked ~ .navigation__background {
-  transform: scale(80); }
+  transform: scale(80);
+  box-shadow: 4px -4px 15px 0px #FF1F1F, 12px -11px 7px 0px #FF9376, 20px -5px 7px 0px #FFE264, 20px 6px 7px 0px #F6FF33, 13px 12px 17px 0px #FF9527, 2px 17px 17px 0px #FF0000, -9px 21px 18px 0px #FFF212, -9px 6px 11px 0px #FF0808, -11px -9px 11px 0px #FFFA17, -11px -9px 11px 0px #FFFA17, 5px 5px 15px 5px rgba(0, 0, 0, 0); }
 
 .navigation__checkbox:checked ~ .navigation__nav {
   width: 100%;
@@ -304,3 +306,6 @@ body {
 .navigation__checkbox:checked + .navigation__button .navigation__icon:after {
   transform: rotate(-135deg);
   top: 0; }
+
+.section-about {
+  height: 52rem; }

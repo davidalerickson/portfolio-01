@@ -3,8 +3,9 @@
     background-image: url(../img/Front.jpg);
     background-size: cover;
     background-position: top;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-    position: relative;
+    box-shadow: 0 2rem 4rem black;
     @include respond(phone){
         background-position: -25% top;
     }
