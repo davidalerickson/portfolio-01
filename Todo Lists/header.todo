@@ -2,6 +2,7 @@ Header Tasks:
 - Box Shadow whole sectoion
 - Border and shadow or glow for nav button
 - Add darker color to nav-item background to make them show up better
+- Create nav button component so that it can be used outside of header. copy css from style.css for all navigation classes to and change to something more generic
 
 Header Tasks:
 - Box Shadow whole sectoion
