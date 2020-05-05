@@ -7,12 +7,12 @@
         width: 7rem;
         border-radius: 50%;
         position: fixed;
-        top: 6rem;
-        right: 6rem;
+        top: 3rem;
+        right: 3rem;
         text-align: center; //to center the nav icon span element
         // background-color: $color-white;
-        background-color: #FF9376;
-        box-shadow: 0 0rem 3rem rgba(#FFFA17, 1);
+        background-image: radial-gradient($color-yellow-bright, $color-salmon-1);
+        box-shadow: 0 0rem 3rem rgba($color-salmon-1, 1);
         cursor: pointer;
         z-index: 2000;
         @include respond(phone){
@@ -21,16 +21,17 @@
         }
     }
     &__background {
-        height: 6rem;
-        width: 6rem;
+        height: 3rem;
+        width: 3rem;
         border-radius: 50%;
         // background-image: radial-gradient(rgba($color-grey-dark, .95), rgba($color-grey-dark, .95));
-        background-image: radial-gradient(rgba(#FF9376, .95), rgba(#FFFA17, .95));
+        background-image: radial-gradient(rgba($color-yellow-bright, .95), rgba($color-salmon-1, .95));
+
         position: fixed;
-        top: 6.5rem;
-        right: 6.5rem;
+        top: 3.5rem;
+        right: 3.5rem;
         z-index: 1000;
-        transition: transform 1s;
+        transition: transform .5s;
 
         @include respond(phone){
             top: 3.5rem;
@@ -99,8 +100,10 @@
 
     &__checkbox:checked ~ &__background {
         //scale background on check
-        transform: scale(80);
+        transform: scale(120);
         @include fireBoxShadow;
+        -webkit-backdrop-filter: blur(1px);
+        backdrop-filter: blur(1px);
     }
 
     &__checkbox:checked ~ &__nav {
@@ -119,7 +122,7 @@
     &::after {
         width: 3rem;
         height: 2px;
-        background-color: $color-grey-dark-3;
+        background-color: $color-salmon-1;
         display: inline-block;
     }
     &::before,

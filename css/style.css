@@ -65,7 +65,7 @@ body {
   /*font-size: 16px;*/
   line-height: 1.7;
   color: #777; }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     body {
       padding: 0; } }
 
@@ -73,7 +73,7 @@ body {
   color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden; }
-  @media (max-width: 37.5em) {
+  @media only screen and (max-width: 37.5em) {
     .heading-primary {
       color: #333; } }
   .heading-primary--main {
@@ -87,7 +87,7 @@ body {
     animation: moveInLeft 1s ease-out;
     /* animation-iteration-count: 3; */
     /* animation-delay: 3s; */ }
-    @media (max-width: 37.5em) {
+    @media only screen and (max-width: 37.5em) {
       .heading-primary--main {
         font-size: 3rem;
         letter-spacing: 0;
@@ -101,7 +101,7 @@ body {
     animation-timing-function: ease-out;
     text-transform: lowercase;
     /* animation-delay: 0.5s; */ }
-    @media (max-width: 37.5em) {
+    @media only screen and (max-width: 37.5em) {
       .heading-primary--sub {
         font-size: 1.5rem;
         line-height: 1.2;
@@ -161,29 +161,29 @@ body {
   width: 7rem;
   border-radius: 50%;
   position: fixed;
-  top: 6rem;
-  right: 6rem;
+  top: 3rem;
+  right: 3rem;
   text-align: center;
-  background-color: #FF9376;
-  box-shadow: 0 0rem 3rem #fffa17;
+  background-image: radial-gradient(#FFFA17, #FF9376);
+  box-shadow: 0 0rem 3rem #ff9376;
   cursor: pointer;
   z-index: 2000; }
-  @media (max-width: 37.5em) {
+  @media only screen and (max-width: 37.5em) {
     .navigation__button {
       top: 3rem;
       right: 3rem; } }
 
 .navigation__background {
-  height: 6rem;
-  width: 6rem;
+  height: 3rem;
+  width: 3rem;
   border-radius: 50%;
-  background-image: radial-gradient(rgba(255, 147, 118, 0.95), rgba(255, 250, 23, 0.95));
+  background-image: radial-gradient(rgba(255, 250, 23, 0.95), rgba(255, 147, 118, 0.95));
   position: fixed;
-  top: 6.5rem;
-  right: 6.5rem;
+  top: 3.5rem;
+  right: 3.5rem;
   z-index: 1000;
-  transition: transform 1s; }
-  @media (max-width: 37.5em) {
+  transition: transform .5s; }
+  @media only screen and (max-width: 37.5em) {
     .navigation__background {
       top: 3.5rem;
       right: 3.5rem; } }
@@ -232,8 +232,10 @@ body {
   transform: translateX(1rem); }
 
 .navigation__checkbox:checked ~ .navigation__background {
-  transform: scale(80);
-  box-shadow: 4px -4px 15px 0px #FF1F1F, 12px -11px 7px 0px #FF9376, 20px -5px 7px 0px #FFE264, 20px 6px 7px 0px #F6FF33, 13px 12px 17px 0px #FF9527, 2px 17px 17px 0px #FF0000, -9px 21px 18px 0px #FFF212, -9px 6px 11px 0px #FF0808, -11px -9px 11px 0px #FFFA17, -11px -9px 11px 0px #FFFA17, 5px 5px 15px 5px rgba(0, 0, 0, 0); }
+  transform: scale(120);
+  box-shadow: 4px -4px 15px 0px #FF1F1F, 12px -11px 7px 0px #FF9376, 20px -5px 7px 0px #FFE264, 20px 6px 7px 0px #F6FF33, 13px 12px 17px 0px #FF9527, 2px 17px 17px 0px #FF0000, -9px 21px 18px 0px #FFF212, -9px 6px 11px 0px #FF0808, -11px -9px 11px 0px #FFFA17, -11px -9px 11px 0px #FFFA17, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px); }
 
 .navigation__checkbox:checked ~ .navigation__nav {
   width: 100%;
@@ -245,7 +247,7 @@ body {
   .navigation__icon, .navigation__icon::before, .navigation__icon::after {
     width: 3rem;
     height: 2px;
-    background-color: #333;
+    background-color: #FF9376;
     display: inline-block; }
   .navigation__icon::before, .navigation__icon::after {
     content: "";
@@ -283,12 +285,12 @@ body {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
   box-shadow: 0 2rem 4rem black; }
-  @media (max-width: 37.5em) {
+  @media only screen and (max-width: 37.5em) {
     .header {
       background-position: -25% top; } }
   .header__logos-box {
     margin-top: 3rem; }
-    @media (max-width: 37.5em) {
+    @media only screen and (max-width: 37.5em) {
       .header__logos-box {
         margin-top: 2rem; } }
   .header__logo-box {
@@ -301,7 +303,7 @@ body {
     left: 58%;
     transform: translate(-50%, -50%);
     text-align: center; }
-    @media (max-width: 37.5em) {
+    @media only screen and (max-width: 37.5em) {
       .header__text-box {
         top: 70%;
         padding: 0 1rem;
