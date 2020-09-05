@@ -11,6 +11,9 @@
     @include respond(phone){
         background-position: -25% top;
     }
+    @include respondPic(smallHiResOrBigDesk) {
+        background-image: url(../img/Front@1x.jpg);
+    }
     &__logos-box {
         margin-top: 3rem;
         @include respond(phone){

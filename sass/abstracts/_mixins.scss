@@ -1,3 +1,23 @@
+//Basic CSS for /pages/main
+@mixin basic_page_Main {
+    *,
+    *::after,
+    *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit; /*converts box sizing to inheritable which is applied to body and thus to all below*/
+    }  
+    html {
+        font-size: 62.5%; /*Set root font size 62.5% of root font size which normally is 16 sets our root font size to 10px to 
+                            make calculations easy, yet allow the user to change fontsize in the browser. Defines what 1rem is*/
+    }
+    body {
+        box-sizing: border-box;
+    }
+    
+}
+
+
 //Media Query Manager and Strategy
 
 /*
@@ -34,6 +54,19 @@ Order of attack: Base + Typography> General layout + Grid> Components
 }
 
 
+//Resaponsive Picture Media Query Strategy
+//2048px wide for rentina display that is at least 600px wide or minumum width of 1800px
+@mixin respondPic ($breakpoint) {
+    @if $breakpoint == smallHiResOrBigDesk{
+        @media (min-resolution: 192dpi) and (min-width: 37.5em),
+        (-webkit-min-device-pixel-ration: 2) and (min-width: 37.5em),
+        (min-width: 112.5em){@content}; //retina display resolution and webkit prefix for safari
+    }
+}
+
+
+
+
 
 // Box Shadow Mixins
 
@@ -42,3 +75,4 @@ Order of attack: Base + Typography> General layout + Grid> Components
 @mixin fireBoxShadow(){
     box-shadow: 4px -4px 15px 0px #FF1F1F, 12px -11px 7px 0px #FF9376, 20px -5px 7px 0px #FFE264, 20px 6px 7px 0px #F6FF33, 13px 12px 17px 0px #FF9527, 2px 17px 17px 0px #FF0000, -9px 21px 18px 0px #FFF212, -9px 6px 11px 0px #FF0808, -11px -9px 11px 0px #FFFA17, -11px -9px 11px 0px #FFFA17, 5px 5px 15px 5px rgba(0,0,0,0);
 }
+

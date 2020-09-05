@@ -288,6 +288,9 @@ body {
   @media only screen and (max-width: 37.5em) {
     .header {
       background-position: -25% top; } }
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ration: 2) and (min-width: 37.5em), (min-width: 112.5em) {
+    .header {
+      background-image: url(../img/Front@1x.jpg); } }
   .header__logos-box {
     margin-top: 3rem; }
     @media only screen and (max-width: 37.5em) {
@@ -311,4 +314,5 @@ body {
         background-color: rgba(247, 247, 247, 0.7); } }
 
 .section-about {
-  height: 100rem; }
+  height: 100rem;
+  background-color: blue; }
